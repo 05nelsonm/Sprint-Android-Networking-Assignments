@@ -8,7 +8,9 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.Gson
 import com.lambdaschool.basicandroidnetworking.R
+import com.lambdaschool.basicandroidnetworking.model.AdviceMsg
 import kotlinx.android.synthetic.main.activity_http.*
 import org.json.JSONObject
 import java.io.BufferedReader
@@ -183,6 +185,8 @@ class HttpActivity : AppCompatActivity() {
 
         // TODO: Write a fun to parse a JSON string using the Gson Library
         private fun parseJsonAdviceGson(raw: String?): String {
+            val parser = Gson()
+            parser.fromJson(raw, AdviceMsg::class.java)
             return ""
         }
     }
