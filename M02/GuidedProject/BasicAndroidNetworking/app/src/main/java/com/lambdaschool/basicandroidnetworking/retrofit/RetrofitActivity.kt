@@ -37,7 +37,10 @@ class RetrofitActivity : AppCompatActivity(), Callback<AdviceMsg> {
         }
 
         fetchNetworkAPIOkHttpButton.setOnClickListener {
+
             //TODO: Get advice with logging
+            val retriever = AdviceRetriever()
+            retriever.getRandomAdviceWithOkHttp().enqueue(this)
         }
     }
 
