@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">M01_Threading</string>
+    <string name="prime_numbers">Prime Numbers</string>
+    <string name="cancel">Cancel</string>
 </resources>

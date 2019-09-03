@@ -1,4 +1,4 @@
-package com.lambdaschool.m01_threading
+package com.lambdaschool.m01_threads
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.lambdaschool.m01_threading
+package com.lambdaschool.m01_threads
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
