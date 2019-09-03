@@ -185,9 +185,14 @@ class HttpActivity : AppCompatActivity() {
 
         // TODO: Write a fun to parse a JSON string using the Gson Library
         private fun parseJsonAdviceGson(raw: String?): String {
-            val parser = Gson()
-            parser.fromJson(raw, AdviceMsg::class.java)
-            return ""
+            return try {
+                val parser = Gson()
+                val adviceMsg = parser.fromJson(raw, AdviceMsg::class.java)
+                adviceMsg.getAdvice() ?: ""
+            } catch (t: Throwable) {
+                ""
+            }
+
         }
     }
 }
