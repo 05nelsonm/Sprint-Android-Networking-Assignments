@@ -19,6 +19,7 @@ class RetrofitActivity : AppCompatActivity() {
         fetchNetworkAPIRetrofitButton.setOnClickListener {
 
             // TODO: Get advice without logging
+            
         }
 
         fetchNetworkAPIOkHttpButton.setOnClickListener {
