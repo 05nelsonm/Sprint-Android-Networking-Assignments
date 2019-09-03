@@ -1,5 +1,7 @@
 package com.lambdaschool.basicandroidnetworking.http
 
+import android.content.Context
+import android.net.ConnectivityManager
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
@@ -8,7 +10,15 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.lambdaschool.basicandroidnetworking.R
 import kotlinx.android.synthetic.main.activity_http.*
+import org.json.JSONObject
+import java.io.BufferedReader
+import java.io.IOException
+import java.io.InputStreamReader
 import java.lang.ref.WeakReference
+import java.net.HttpURLConnection
+import java.net.MalformedURLException
+import java.net.URL
+import java.net.UnknownHostException
 
 /**
  * Activity showcases networking calls using HTTPUrlConnection and AsyncTask
@@ -49,10 +59,24 @@ class HttpActivity : AppCompatActivity() {
 
         fetchNetworkAPIButton.setOnClickListener {
             // TODO: Check for network connection. If connected, fetch data, else notify user
+            if (isConnected()) {
+                // Launch AsyncTask for HTTP call
+                AdviceAsyncTask(this).execute()
+            } else {
+                // Notify user that we have no internet
+                Toast.makeText(this, "No internet connection", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
     // TODO: Create a function for checking the network connection
+    private fun isConnected(): Boolean {
+        val connectivityManager =
+            getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+        val networkInfo = connectivityManager.activeNetworkInfo
+        return networkInfo?.isConnected==true
+    }
 
     // TODO: Run code in the background (not on UI thread); ie. for networking calls
     private class AdviceAsyncTask // only retain a weak reference to the activity
@@ -63,7 +87,6 @@ class HttpActivity : AppCompatActivity() {
         override fun onPreExecute() {
             val activity = activityReference.get()
             if (activity == null || activity.isFinishing) return
-
             // TODO: Turn progressbar ON
             activity.httpProgressBar.visibility = View.VISIBLE
         }
@@ -71,6 +94,50 @@ class HttpActivity : AppCompatActivity() {
         override fun doInBackground(vararg v: Void): String? {
 
             // TODO: Define a HttpURLConnection and fetch data
+            // (1) Open a connection
+
+            var c: HttpURLConnection? = null
+            var u: URL? = null
+            try { // c. Put it in a try block in case it throws errors/exceptions
+                u = URL(ADVICE_API_URL) // a. Setup the url
+                c = u.openConnection() as HttpURLConnection // b. Open the connection
+
+                // (2) Prepare request
+                c.apply {
+                    setRequestProperty("Content-length", "0") // a. good practice to put in to initialize
+                    requestMethod = "GET"
+                    useCaches = false
+                    allowUserInteraction = false
+                    connectTimeout = ADVICE_API_TIMEOUT
+                    connect()
+                }
+
+                val br = BufferedReader(InputStreamReader(c.inputStream))
+
+                val sb = StringBuilder()
+                var line = br.readLine()
+                while (line != null) {
+                    sb.append(line + "\n")
+                    line = br.readLine()
+                }
+
+                br.close()
+
+                return sb.toString()
+
+            } catch (e: UnknownHostException) {
+                Log.e(TAG, "UnknownHostException")
+            } catch (e: MalformedURLException) {
+                Log.e(TAG, "MalformedURLException")
+            } catch (e: IOException) {
+                Log.e(TAG, "IOException")
+            } finally { // d. Finally will run no matter what
+                c?.disconnect()
+            }
+
+
+            // Read response
+            // Close connection
             return JSON_ERROR
         }
 
@@ -106,7 +173,12 @@ class HttpActivity : AppCompatActivity() {
 
         // TODO: Write a fun to manually parse a JSON string
         private fun parseJsonAdvice(raw: String?): String {
-            return ""
+            return try {
+                val adviceJson = JSONObject(raw)
+                adviceJson.getJSONObject("slip").getString("advice")
+            } catch (t: Throwable) {
+                ""
+            }
         }
 
         // TODO: Write a fun to parse a JSON string using the Gson Library
