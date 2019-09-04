@@ -1,4 +1,4 @@
-package com.lambdaschool.m04_httpoperations
+package com.lambdaschool.m03_httpoperations
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

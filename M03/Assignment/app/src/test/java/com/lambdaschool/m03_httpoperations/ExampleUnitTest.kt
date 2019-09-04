@@ -1,4 +1,4 @@
-package com.lambdaschool.m04_httpoperations
+package com.lambdaschool.m03_httpoperations
 
 import org.junit.Test
 
