@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="006ebd86-42ba-44c4-9939-39be70a15bdf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../M02/Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../M02/Assignment/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/lambdaschool/httpoperations/model/Employee.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/lambdaschool/httpoperations/model/Employee.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/lambdaschool/httpoperations/retrofit/JsonPlaceHolderApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/lambdaschool/httpoperations/retrofit/JsonPlaceHolderApi.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,11 +38,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lambdaschool/httpoperations/model/Employee.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="145">
               <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lambdaschool/httpoperations/retrofit/JsonPlaceHolderApi.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="783">
+              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+              <folding>
+                <element signature="e#50#206#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lambdaschool/httpoperations/HttpGetActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -58,6 +78,7 @@
       <list>
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lambdaschool/httpoperations/model/Employee.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lambdaschool/httpoperations/retrofit/JsonPlaceHolderApi.kt" />
       </list>
     </option>
   </component>
@@ -200,6 +221,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../M02/Assignment" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
@@ -294,6 +316,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="35" width="3840" height="2011" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.17297441" />
       <window_info id="Structure" side_tool="true" />
@@ -336,6 +359,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lambdaschool/httpoperations/retrofit/JsonPlaceHolderApi.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+          <folding>
+            <element signature="e#50#206#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lambdaschool/httpoperations/HttpGetActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
         </state>
       </provider>
     </entry>
