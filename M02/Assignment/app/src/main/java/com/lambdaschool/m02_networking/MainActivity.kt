@@ -25,13 +25,8 @@ class MainActivity : AppCompatActivity(), Callback<List<OceaniaCountry>> {
         if (response.isSuccessful) {
             val oceaniaCountryList = response.body()
             var countryList = ""
-            for (i in 0..(oceaniaCountryList?.size ?: -1)) {
-                if (i < 0) { // uses elvis operator above to determine nullable value and will break loop
-                    Toast.makeText(this@MainActivity, "oceaniaCountryList[i].name is NULL", Toast.LENGTH_SHORT).show()
-                    break
-                } else {
-                    countryList += oceaniaCountryList!![i].name + "\n"
-                }
+            oceaniaCountryList?.forEach {
+                countryList += it.name + "\n"
             }
             countriesTextView.setText(countryList)
         } else {
