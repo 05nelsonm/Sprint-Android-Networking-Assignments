@@ -16,11 +16,11 @@ class HttpGetActivity : AppCompatActivity() {
             getEmployees()
         } else if (type == "path") {
             title = "GET - Path Parameter: EmployeeId - 1"
-            getEmployees("1")
+            getEmployeesById("1")
         }
         else{
             title = "GET - Query Parameter: Age - 55"
-            getEmployeesForAge("55")
+            getEmployeesByAge("55")
         }
     }
 
@@ -28,11 +28,11 @@ class HttpGetActivity : AppCompatActivity() {
         // TODO: Write the call for getting all employees
     }
 
-    private fun getEmployees(employeeId: String){
+    private fun getEmployeesById(employeeId: String){
         // TODO: Write the call to get an employee by id
     }
 
-    private fun getEmployeesForAge(age: String){
+    private fun getEmployeesByAge(age: String){
         // TODO: Write the call to get an employee by age
     }
 
