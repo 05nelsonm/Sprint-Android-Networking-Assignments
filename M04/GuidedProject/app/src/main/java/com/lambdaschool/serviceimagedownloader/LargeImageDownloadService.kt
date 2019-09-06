@@ -16,7 +16,7 @@ class LargeImageDownloadService : Service() {
         // TODO: S04M04-2 Override onStartCommand
         Thread(Runnable() {
             // TODO: S04M04-3 Add network call
-            val bitmap = NetworkAdapter.getBitmapFromUrl("https://i.imgur.com/HaSmgGn.jpg")
+            val bitmap = NetworkAdapter.getBitmapFromUrl("https://mnals.privatedns.org/s/onfPBwYP59JAGNB/download")
 
             val intent = Intent(FILE_DOWNLOADED_ACTION).apply {
                 putExtra(DOWNLOADED_IMAGE, bitmap)

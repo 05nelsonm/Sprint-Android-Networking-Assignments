@@ -13,7 +13,7 @@ class LargeImageDownloadService : Service() {
         Log.i("LargeImageDownload", " - started")
 
         Thread(Runnable() {
-            val bitmap = NetworkAdapter.getBitmapFromUrl("https://i.imgur.com/HaSmgGn.jpg")
+            val bitmap = NetworkAdapter.getBitmapFromUrl("https://mnals.privatedns.org/s/onfPBwYP59JAGNB/download")
             val intent = Intent(FILE_DOWNLOADED_ACTION).apply {
                 putExtra(DOWNLOADED_IMAGE, bitmap)
             }
